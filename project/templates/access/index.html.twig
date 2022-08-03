@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            background: #FBF3CI;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 23%;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ path('welcome') }}">
+        <button class="btn btn-dark btn-lg">Welcome!</button>
+    </form>
+</body>
+</html>

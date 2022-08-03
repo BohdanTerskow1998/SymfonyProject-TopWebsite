@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Main page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="\bundles\apiplatform\welcome2.css"> 
+</head>
+<body>
+
+    <header>
+
+          <div class="collapse bg-primary" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                  <h4 class="text-black">About</h4>
+                  <p class="text-black">Hello! Maybe, you come to this page, because wathing my video on YouTube or read my summary and interested myself in order to offer me a job. I hope, that your impressions will be positive!</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4 class="text-black">Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.instagram.com/gods.created/" class="text-black" target="_blank">Follow on Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCie6Dsk3dg1Z2q2Qyo80SZQ" class="text-black" target="_blank">Like on Youtube</a>
+                    </li>
+                    <li><a href="https://github.com/BohdanTerskow1998" class="text-black" target="_blank">Read my GitHub</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar navbar-warning bg-primary shadow-sm">
+            <div class="container">
+              <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <strong>TopWebsite</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+
+    </header>
+
+    <main>
+
+          <section class="py-5 text-center container">
+
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">TopWebsite</h1>
+                <p class="lead text-muted">This page was creating for work demostration. Please, don't value too strictly, beacuse it's only example, showing, that I can to work with Symfony and Bootstrap elements. <a href="https://github.com/BohdanTerskow1998">The code you can read on my GitHub</a> and <a href="https://www.youtube.com/channel/UCie6Dsk3dg1Z2q2Qyo80SZQ">watch video on my YouTube-channel.</a> <p class="lead text-muted"><strong><i>Thank you!</i></strong></p></p>
+                <br />
+                <p>
+                  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Callback</button>
+                </p>
+              </div>
+            </div>
+
+            <h1>USERS</h1>
+            <table class="table table-bordered">
+              <thead>
+                <tr class="table-primary">
+                  <th scope="col">Name:</th>
+                  <th scope="col">Email:</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for user in users %}
+                  <tr class="table-primary">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+            <div class="pagination">
+              {{ knp_pagination_render(users) }}
+            </div>
+          </section>
+
+    </main>
+
+    <!-- Modal window --> 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="form">
+                    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+                    {{form_start(form)}}
+                        {{form_widget(form)}}
+                        <button class="btn btn-primary btn-send">Send data</button>
+                    {{form_end(form)}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div> 
+
+    <footer class="text-muted py-5"><hr>
+
+          <div class="container">
+            <p class="mb-1">TopWebsite &copy; Bootstrap, Symfony. You can use this page for your stading!</p>
+            <p class="mb-0">Do you want more? <a href="https://t.me/ya_boh">Write me!</a></p>
+          </div>
+
+    </footer>
+</body>
+</html>

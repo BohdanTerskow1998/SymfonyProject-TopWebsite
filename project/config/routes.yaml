@@ -1,0 +1,12 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+welcome:
+      path: /welcome
+      controller: App\Controller\ProjectController::welcome
+
+access:
+      path: /
+      controller: App\Controller\AccessController::index
